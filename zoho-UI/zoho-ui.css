@@ -1,0 +1,903 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "inter", sans-serif;
+    font-weight: 300;
+    overflow-y: scroll;
+}
+/* header - navbar container  */
+.navbar-container{
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f1f1f1;
+    height: 72px; 
+    position: relative;
+    z-index: 100px;
+}
+.navbar-container nav{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;    
+}
+nav .navbar-list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    
+}
+nav .navbar-list  .zoho-logo{
+padding:9px 12px ;
+}
+nav .navbar-list .list-item{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 0 8px;
+    cursor: pointer;
+}
+#product-btn{
+    font-weight: 600;
+}
+nav .navbar-list .list-item:hover{
+    color: #44a5ff;;
+}
+nav .signin-searchbox{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 300px;
+    justify-content: space-around;
+}
+nav .signin-searchbox li .search-icon{
+    font-size: 14px;
+}
+nav .signin-searchbox li .search-icon:hover{
+    color: #44a5ff;
+    cursor: pointer;
+}
+.signin-searchbox li #sign-in{
+    text-transform: uppercase;
+    font-size: 14px;
+    color:  rgb(225, 39, 39);;
+    cursor: pointer;
+}
+.signin-searchbox li #sign-up{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f1f1f1;
+    padding: 10px 12px;
+    background-color: rgb(225, 39, 39);
+    font-weight: 500;
+    cursor: pointer;
+}
+/* header menu */
+.navbar-container .popup-menu{
+    z-index: 100;
+    width: 100vw;
+    height: 660px;
+    background-color: #ebebeb;
+    position: absolute;
+    display: flex;
+    transition: all 500ms ease;
+}
+.navbar-container .popup-menu.hide{
+    transform: translateY(-200px);
+    opacity: 0;
+    pointer-events: none;  
+    transition: all 500ms ease;
+}
+.popup-menu .side-head-menu{
+    width: 20%;
+    height: 100%;
+    background-color: #0c263e;
+    display: flex;
+    justify-content: flex-end;
+}
+.side-head-menu ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-top: 16px;
+    width: 100%;
+}
+.side-head-menu ul li{
+    padding: 8px 26px;
+    font-size: 18px;
+    color: #c8c8c8;
+    font-weight: 500;
+    cursor: pointer;
+}
+.side-head-menu ul li:hover{
+    color: #44a5ff;
+}
+.side-head-menu ul .market-place{
+    padding-top: 18px;
+    border-top: 1px solid ;
+}
+.popup-menu .main-head-menu{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-head-menu .head-bottom-menu{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;  
+}
+.head-bottom-menu div{
+    width: 580px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.head-bottom-menu div h1,
+.head-bottom-menu div p{
+    color: #1b1b1b;
+}
+.main-head-menu .head-menus{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.head-menus div{
+    width: 360px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+    cursor: pointer;
+}
+.head-menus div:hover{
+    background-color: #f1f1f1;
+}
+.head-menus div h1,
+.head-menus div p{
+    color: #1b1b1b;
+    padding-left: 20px;
+    padding-bottom: 6px;
+}
+.content-container{
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.content-container .section-1-cover{
+    width: 100%;
+    height: 700px;
+    background-color: #00816F;
+    z-index: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.section-1-cover .content-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    height: 74px;
+    border-bottom: 1px solid #dadada;
+    position: sticky;
+}
+.content-nav .sticky-signup{
+    display: none;
+}
+.content-nav.sticky .sticky-signup{
+    display: block;
+    text-transform: uppercase;
+    font-size: 8px;
+    color: #fff;
+    padding: 8px 10px;
+    background-color: rgb(225, 39, 39);
+    font-weight: 500;
+    cursor: pointer;
+}
+.content-nav.sticky ul .sticky-signup #sign-up{
+    display: block;
+    font-size: 14px;
+    color: #fff;
+}
+.content-nav ul .sticky-signup #sign-up{
+    display: none;
+}
+.section-1-cover .content-nav.sticky{
+    background-color: #f1f1f1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.92;
+}
+.section-1-cover .content-nav .finance-logo .normal-img,
+.section-1-cover .content-nav.sticky .finance-logo .sticky-img{
+    display: block;
+    padding: 9px 12px;   
+}
+.section-1-cover .content-nav.sticky .finance-logo .normal-img,
+.section-1-cover .content-nav .finance-logo .sticky-img{
+   display: none; 
+}
+.section-1-cover .content-nav ul{
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.section-1-cover .content-nav.sticky ul{
+    width: 600px;
+    padding-right: 40px;
+}
+.section-1-cover .content-nav ul li a{
+    text-decoration: none;
+    color: #dadada;
+    font-size: 17px;
+}
+.content-nav.sticky ul li a{
+    color: #1b1b1b;
+}
+.section-1-cover .section-1-details{
+    display: flex;
+    width: 85%;
+    margin-top: 50px;
+}
+.section-1-details .intro-finance{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.section-1-details .detail-logo-1{
+    width: 50%;
+}
+.section-1-details .intro-finance .intro-title{
+    position: relative;
+    width: 100%;
+    left: 0;
+}
+.intro-title .intro-bottom{
+    position: absolute;
+    width: 80px;
+    border-bottom: 2px solid #fff;
+    left: 8px;
+}
+.section-1-details .intro-finance .intro-title h1{
+    color: #fff;
+    font-size: 26px;
+    font-weight: 100;
+    padding: 8px 6px;
+}
+.section-1-details .intro-finance h2{
+    color: #dadada;
+    font-size: 30px;
+    font-weight: 100;
+}
+.section-1-details .intro-finance h3{
+    color: #dadada;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+}
+.section-1-details .intro-finance .section-1-btn{
+    padding: 10px 24px;
+    width: fit-content;
+    background-color: #EB9E00;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1b1b1b;
+    cursor: pointer;
+}
+.section-1-details .intro-finance .section-1-btn:hover{
+    background-color: #eba71f;
+}
+.section-1-cover .bottom-img{
+    bottom: 0;
+    transform: translateY(6px);
+}
+
+/* section-2 content section */
+
+.section-2-cover  {
+    width: 100vw;
+    height: 900px;
+    margin-top: 10px;
+
+}
+.section-2-cover .section-2-head{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 40px;
+}
+.section-2-cover .section-2-head p{
+    color: #1b1b1b;
+    font-size: 36px;   
+}
+.section-2-cover .section-2-menu{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+.section-2-menu ul{
+   height: 120px;
+   width: 75%;
+   display: flex;
+   justify-content: center;
+   justify-content: space-around;
+   list-style: none;
+}
+.section-2-menu ul li{
+    height: 120px;
+    width: 140px;
+    display: flex;
+   justify-content: center; 
+   cursor: pointer; 
+}
+.section-2-menu ul li a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #1b1b1b;   
+}
+.section-2-menu ul li a div{
+    width: 100px; 
+    height: 70%;  
+}
+.section-2-menu ul li a .tab-1,.section-2-menu ul li a .tab-2,
+.section-2-menu ul li a .tab-3,
+.section-2-menu ul li a .tab-4,.section-2-menu ul li a .tab-5,
+.section-2-menu ul li a .tab-6,
+.section-2-menu ul li a .tab-7{
+    display: inline-block;
+    background-image: url("images/zoho-icons.png");
+}
+.section-2-menu ul li a .tab-1{
+    background-position-x: -325px;   
+}
+.section-2-menu ul li a .tab-2{
+    background-position-x: -450px;   
+}
+.section-2-menu ul li a .tab-3{
+    background-position-x: -10px;   
+}
+.section-2-menu ul li a .tab-4{
+    background-position-x: -208px;   
+}
+.section-2-menu ul li a .tab-5{
+    background-position-x: -108px;   
+}
+.section-2-menu ul li a .tab-6{
+    background-position-x: -615px;   
+}
+.section-2-menu ul li a .tab-7{
+    background-position-x: -525px; 
+    background-position-y: -300px;   
+}
+.tab-element.underline{
+    border-bottom: 3px solid green;
+}
+/* menu contail image and detail */
+
+.menu-content{
+    width: 100%;
+    height: 600px;
+}
+.menu-content .tag-1-content,
+.menu-content .tag-2-content,
+.menu-content .tag-3-content,
+.menu-content .tag-4-content,
+.menu-content .tag-5-content,
+.menu-content .tag-6-content,
+.menu-content .tag-7-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.menu-content .tag-1-content.hide,
+.menu-content .tag-2-content.hide,
+.menu-content .tag-3-content.hide,
+.menu-content .tag-4-content.hide,
+.menu-content .tag-5-content.hide,
+.menu-content .tag-6-content.hide,
+.menu-content .tag-7-content.hide{
+    display: none;
+}
+.tag-1-content .menu-content-img,
+.tag-2-content .menu-content-img,
+.tag-3-content .menu-content-img,
+.tag-4-content .menu-content-img,
+.tag-5-content .menu-content-img,
+.tag-6-content .menu-content-img,
+.tag-7-content .menu-content-img{
+    width: 60%;
+    padding:0 28px;
+}
+.tag-1-content .menu-content-detail,
+.tag-2-content .menu-content-detail,
+.tag-3-content .menu-content-detail,
+.tag-4-content .menu-content-detail,
+.tag-5-content .menu-content-detail,
+.tag-6-content .menu-content-detail,
+.tag-7-content .menu-content-detail{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 300px;
+    justify-content: center;
+}
+.tag-1-content .menu-content-detail h1,
+.tag-2-content .menu-content-detail h1,
+.tag-3-content .menu-content-detail h1,
+.tag-4-content .menu-content-detail h1,
+.tag-5-content .menu-content-detail h1,
+.tag-6-content .menu-content-detail h1,
+.tag-7-content .menu-content-detail h1{
+    color: #1b1b1b;
+    font-size: 24px;
+    font-weight: 550;  
+}
+.tag-1-content .menu-content-detail p,
+.tag-2-content .menu-content-detail p,
+.tag-3-content .menu-content-detail p,
+.tag-4-content .menu-content-detail p,
+.tag-5-content .menu-content-detail p,
+.tag-6-content .menu-content-detail p,
+.tag-7-content .menu-content-detail p{
+    color: #1b1b1b;
+    font-size: 17px;
+    padding-top: 14px;
+}
+.tag-1-content .menu-content-detail ul,
+.tag-2-content .menu-content-detail ul,
+.tag-3-content .menu-content-detail ul,
+.tag-4-content .menu-content-detail ul,
+.tag-5-content .menu-content-detail ul,
+.tag-6-content .menu-content-detail ul,
+.tag-7-content .menu-content-detail ul{
+    list-style: none;
+    padding:14px  0 30px ;
+}
+.tag-1-content .menu-content-detail ul li,
+.tag-2-content .menu-content-detail ul li,
+.tag-3-content .menu-content-detail ul li,
+.tag-4-content .menu-content-detail ul li,
+.tag-5-content .menu-content-detail ul li,
+.tag-6-content .menu-content-detail ul li,
+.tag-7-content .menu-content-detail ul li{
+    color: #1b1b1b;
+    padding-top: 12px;
+    font-size: 18px;
+}
+.tag-1-content .menu-content-detail ul li a,
+.tag-2-content .menu-content-detail ul li a,
+.tag-3-content .menu-content-detail ul li a,
+.tag-4-content .menu-content-detail ul li a,
+.tag-5-content .menu-content-detail ul li a,
+.tag-6-content .menu-content-detail ul li a,
+.tag-7-content .menu-content-detail ul li a{
+    display: inline-block;
+    color: green;
+    padding-right: 4px;
+}
+.tag-1-content .menu-content-detail div a,
+.tag-2-content .menu-content-detail div a,
+.tag-3-content .menu-content-detail div a,
+.tag-4-content .menu-content-detail div a,
+.tag-5-content .menu-content-detail div a,
+.tag-6-content .menu-content-detail div a,
+.tag-7-content .menu-content-detail div a{
+    padding-top: 14px;
+    color: #44a5ff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* section-3 details */
+
+.section-3-cover{
+    background-color: #f1f1f1;
+    width: 100vw;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+.section-3-cover .section-3-head{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+.section-3-cover .section-3-head p{
+    color: #1b1b1b;
+    font-size: 36px;
+    padding-bottom: 40px;   
+}
+.section-3-cover .section-3-details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+}
+.section-3-details div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 370px;
+    height: 270px;
+}
+.section-3-details .info-1 .info-logo-1,
+.section-3-details .info-2 .info-logo-2,
+.section-3-details .info-3 .info-logo-3,
+.section-3-details .info-4 .info-logo-4,
+.section-3-details .info-5 .info-logo-5,
+.section-3-details .info-6 .info-logo-6{
+    width: 100px;
+    height: 90px;
+    background-image: url('images/zoho-icons.png');
+}
+.section-3-details .info-1 .info-logo-1{
+    background-position-y: -175px;
+    background-position-x: -25px;  
+}
+.section-3-details .info-2 .info-logo-2{
+    background-position-y: -175px;
+    background-position-x: -185px;
+}
+.section-3-details .info-3 .info-logo-3{
+    background-position-y: -175px;
+    background-position-x: -360px;  
+}
+.section-3-details .info-4 .info-logo-4{
+    background-position-y: -285px;
+    background-position-x: -25px;  
+}
+.section-3-details .info-5 .info-logo-5{
+    background-position-y: -175px;
+    background-position-x: -510px;  
+}
+.section-3-details .info-6 .info-logo-6{
+    background-position-y: -287px;
+    background-position-x: -345px;  
+}
+.section-3-details div h1{
+    color: #1b1b1b;
+    font-weight: 600;
+    font-size: 26px;
+}
+.section-3-details div p{
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 300;
+}
+.section-3-cover .info-bottom{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
+}
+.info-bottom div{
+    color: #1b1b1b;
+    font-size: 24px;
+}
+.info-bottom div a{
+    color: #44a5ff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* section-4 devices  */
+.section-4-cover{
+    width: 100%;
+    height: 570px;
+    background-color: #0c263e;
+}
+.section-4-cover div {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.section-4-cover div h1{
+    color: #f1f1f1;
+    font-size: 36px;
+    font-weight: 500;
+}
+.section-4-cover .device-img{
+    transform: translateY(32px);
+}
+.section-5-cover{
+    height: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.section-5-cover .pricing-head{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1b1b1b;
+    font-size: 24px;
+}
+.section-5-cover .pricing-content{
+    width: 60%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+.pricing-content .price{
+    width: 370px;
+    height: 530px;
+    display: flex;
+    background-color: #ebebeb;
+    justify-content: center;
+    align-items: center;
+}
+.pricing-content .price .box div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pricing-content .price .box div a{
+    font-size: 36px;
+    font-weight: 600;
+    padding-bottom: 12px; 
+}
+.pricing-content .price div span{
+    font-size: 70px;
+    font-weight: 600;
+}
+.pricing-content .price .box p{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 4px 0;
+}
+.pricing-content .pricing-detail{
+    padding-top: 30px;
+} 
+.pricing-content .pricing-detail ul{
+    font-weight: 500;
+    font-size: 20px;
+    list-style: none;
+}
+.pricing-content .pricing-detail ul li{
+    padding-bottom: 16px;
+}
+.pricing-content .pricing-detail ul li a{
+    color: green;
+}
+/* SECTION-6 TRAIL  */
+.section-6-cover{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("images/trail-img.png");
+    overflow: hidden;
+    background-size: cover;
+} 
+.section-6-cover .trial-head{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section-6-cover .trial-head h1{
+    font-size: 32px;
+    font-weight: 400;
+    color: #dadada;
+}
+.section-6-cover .trial-btn a{
+    font-weight: 600;
+    color: #1b1b1b;
+}
+.section-6-cover .trial-btn{
+    width: 240px;
+    height: 50px;
+    background-color: #EB9E00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.section-6-cover .trial-btn:hover{
+   background-color: #eba71f;
+}
+/* footer section*/
+
+footer{
+    width: 100%;
+    height: 600px;
+    background-color: #dadada;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+footer .footer-menu{
+    width: 50%;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 40px; 
+    border-bottom: 1px solid #c8c8c8; 
+}
+.footer-menu div h2{
+    font-size: 14px;
+    color: #1b1b1b;
+}
+.footer-menu div ul{
+    list-style: none;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.footer-menu div ul li{
+    color: #1b1b1b;
+    cursor: pointer;
+    font-size: 12px;
+}
+.footer-menu .select-country h2{
+    padding-bottom: 12px;
+}
+.footer-menu .select-country .country-box{
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    height: 35px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+.footer-menu .select-country .country-box .country{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+.footer-menu .select-country .country-box .country img{
+    padding-right: 5px;
+}
+.footer-menu .select-country .country-box a{
+    padding-right: 5px;
+}
+footer .footer-info{
+    width: 50%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #c8c8c8;
+}
+.footer-info .footer-info-detail{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+}
+.footer-info .footer-info-detail h1{
+    color: #1b1b1b;
+    font-size: 24px;
+}
+.footer-info .footer-info-detail h2{
+    font-size: 16px;
+    color: #1b1b1b;
+}
+.footer-info .footer-info-detail a{
+    color: #44a5ff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+}
+footer .footer-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.footer-links ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    padding: 25px 0;
+}
+.footer-links ul li{
+    font-size: 12px;
+    padding: 10px;
+    border-left: 1px solid #c8c8c8;
+    cursor: pointer;
+    color: #1b1b1b;
+}
+.footer-links ul .link-1{
+    border: none;
+}
+.footer-links div p{
+    font-size: 12px;
+    color: #1b1b1b;
+}
+/* contact-us fixed box */
+.contact-btn{
+    background-color: #0c263e;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+    z-index: 400;
+    position: fixed;
+    bottom: 0px;
+    right: 80px;
+    opacity: 0.6;
+    transition: all 400ms ease;
+    cursor: pointer;
+}
+.contact-btn:hover{
+    opacity: 1;
+    transition: all 400ms ease;
+}
+.contact-btn.hide{
+    display: none;
+}
+.contact-btn .contact-us{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    color: #c8c8c8;
+}
